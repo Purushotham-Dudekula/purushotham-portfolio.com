@@ -6,41 +6,42 @@ const Experience = () => {
   const experiences = EXPERIENCES;
 
   return (
-    <section id="experience" className="py-20 px-6 bg-gradient-dark">
+    <section id="experience" className="py-20 px-6 bg-gradient-to-b from-blue-950 to-slate-900">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
-          Experience
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Professional Experience
+          </h2>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto"></div>
+        </div>
         
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-6">
           {experiences.map((exp, index) => (
             <Card 
               key={index}
-              className="p-6 bg-gradient-card backdrop-blur-sm border-border hover:shadow-glow transition-all duration-500 hover:translate-x-2 group animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s`, opacity: 0, animationFillMode: "forwards" }}
+              className="bg-slate-800 border border-slate-700 p-6 md:p-8 hover:border-purple-600 transition-colors duration-200"
             >
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
-                  <Briefcase className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <div className="flex items-start gap-6">
+                <div className="p-4 bg-purple-600/20 rounded-lg flex-shrink-0">
+                  <Briefcase className="w-8 h-8 text-purple-400" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{exp.role}</h3>
-                  <p className="text-primary font-medium mb-2">{exp.company}</p>
-                  <div className="flex items-center gap-2 text-muted-foreground mb-3">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm">{exp.period}</span>
+                  <h3 className="text-2xl font-semibold text-white mb-2">
+                    {exp.role}
+                  </h3>
+                  <p className="text-purple-400 font-semibold text-lg mb-3">{exp.company}</p>
+                  <div className="flex items-center gap-2 text-slate-400 mb-4">
+                    <Calendar className="w-5 h-5" />
+                    <span className="text-base">{exp.period}</span>
                   </div>
-                  <p className="text-foreground/80">{exp.description}</p>
-                  {exp.certificate && (
-  <a
-    href={exp.certificate}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-primary text-sm font-medium hover:underline"
-  >
-    View Certificate
-  </a>
-)}
+                  <ul className="space-y-2 text-slate-300">
+                    {exp.description.split('.').filter(item => item.trim()).map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-purple-400 mt-1">•</span>
+                        <span>{item.trim()}.</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </Card>

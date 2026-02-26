@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Code, Lightbulb, Users, Trophy } from "lucide-react";
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/photo.jpg";
 
 const About = () => {
   const highlights = [

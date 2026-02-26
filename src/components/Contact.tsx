@@ -3,30 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
-// Read EmailJS config from Vite env variables. Create a `.env.local` with these keys
-// VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_andjttc';
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_u2teur7';
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'w620vQgrs9vAWo1q4';
-
 const Contact = () => {
-  // Initialize EmailJS
-  useEffect(() => {
-    // initialize with public key from env
-    emailjs.init(PUBLIC_KEY);
-  }, []);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,20 +24,15 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        to_email: CONTACT_EMAIL,
-        message: formData.message,
-        reply_to: formData.email
-      };
-
-      // Using EmailJS to send the message (service/template/public key come from env or fallbacks)
       await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        templateParams,
-        PUBLIC_KEY
+        "service_hi969cm",          // Your Service ID
+        "template_o8569o4",         // Your Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "nez4_8d60TRtpJmoy"          // Your Public Key
       );
 
       toast({
@@ -56,11 +41,12 @@ const Contact = () => {
       });
 
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error('EmailJS Error:', error);
+
+    } catch (error: any) {
+      console.error("EmailJS Error:", error);
       toast({
         title: "Failed to send message",
-        description: "Please try again or contact me directly via email.",
+        description: error?.text || "Email configuration error.",
         variant: "destructive",
       });
     } finally {
@@ -69,97 +55,129 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6">
+    <section id="contact" className="py-20 px-6 bg-gradient-to-b from-blue-950 to-slate-900">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
-          Get In Touch
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Get In Touch
+          </h2>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto"></div>
+        </div>
 
-        <div className="max-w-2xl mx-auto space-y-6">
-          <Card className="p-8 bg-gradient-card backdrop-blur-sm border-border shadow-glow animate-scale-in">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          {/* Contact Info */}
+          <Card className="bg-slate-800 border border-slate-700 p-8">
+            <h3 className="text-2xl font-semibold text-white mb-6">
+              Contact Information
+            </h3>
+
             <div className="space-y-6">
-              <div className="flex gap-4 justify-center">
+              <div className="flex items-center gap-4">
+                <Mail className="text-blue-400" />
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="text-white hover:text-blue-400"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Phone className="text-blue-400" />
+                <a href="tel:+917569180749" className="text-white">
+                  +91 7569180749
+                </a>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <MapPin className="text-blue-400" />
+                <p className="text-white">Vizianagaram, India</p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
                   variant="outline"
-                  size="lg"
-                  className="border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
-                  onClick={() => window.open('https://github.com/lavanyakusumanchi', '_blank')}
+                  className="w-full sm:w-auto"
+                  onClick={() =>
+                    window.open("https://github.com/Purushotham-Dudekula", "_blank")
+                  }
                 >
-                  <Github className="w-5 h-5 mr-2" />
+                  <Github className="w-4 h-4 mr-2" />
                   GitHub
                 </Button>
+
                 <Button
                   variant="outline"
-                  size="lg"
-                  className="border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
-                  onClick={() => window.open('https://linkedin.com/in/kusumanchi-lavanya', '_blank')}
+                  className="w-full sm:w-auto"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/purushotham-dudekula-a44a98224",
+                      "_blank"
+                    )
+                  }
                 >
-                  <Linkedin className="w-5 h-5 mr-2" />
+                  <Linkedin className="w-4 h-4 mr-2" />
                   LinkedIn
                 </Button>
               </div>
-
-              <div className="pt-6 border-t border-border">
-                <h3 className="text-xl font-semibold text-center mb-6">Send Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="rounded-lg border-border focus:ring-2 focus:ring-primary focus:border-primary focus:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="rounded-lg border-border focus:ring-2 focus:ring-primary focus:border-primary focus:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Your message..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      required
-                      rows={4}
-                      className="rounded-lg border-border focus:ring-2 focus:ring-primary focus:border-primary focus:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all resize-none"
-                    />
-                  </div>
-                  
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
-                  >
-                    {isSubmitting ? (
-                      <span className="flex items-center gap-2">
-                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                        </svg>
-                        Sending...
-                      </span>
-                    ) : (
-                      "Send Message"
-                    )}
-                  </Button>
-                </form>
-              </div>
             </div>
+          </Card>
+
+          {/* Contact Form */}
+          <Card className="bg-slate-800 border border-slate-700 p-8">
+            <h3 className="text-2xl font-semibold text-white mb-6">
+              Send Message
+            </h3>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+
+              <div>
+                <Label className="text-white">Name</Label>
+                <Input
+                  placeholder="Your name"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  required
+                />
+              </div>
+
+              <div>
+                <Label className="text-white">Email</Label>
+                <Input
+                  type="email"
+                  placeholder="your.email@example.com"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  required
+                />
+              </div>
+
+              <div>
+                <Label className="text-white">Message</Label>
+                <Textarea
+                  rows={4}
+                  placeholder="Your message..."
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  required
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
           </Card>
         </div>
       </div>

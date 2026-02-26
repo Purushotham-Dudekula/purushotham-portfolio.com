@@ -111,8 +111,8 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(199 89% 48% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(199 89% 48% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(270 91% 65% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(270 91% 65% / 0.6)" },
         },
         "pulse-slow": {
           "0%, 100%": { opacity: "0.1" },
@@ -121,6 +121,38 @@ export default {
         "number-tick": {
           "0%": { transform: "translateY(100%)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" }
+        },
+        "typing": {
+          "from": { width: "0" },
+          "to": { width: "100%" }
+        },
+        "blink": {
+          "0%, 50%": { borderColor: "transparent" },
+          "51%, 100%": { borderColor: "hsl(217 91% 60%)" }
+        },
+        "slide-in-up": {
+          "from": { opacity: "0", transform: "translateY(50px)" },
+          "to": { opacity: "1", transform: "translateY(0)" }
+        },
+        "slide-in-left": {
+          "from": { opacity: "0", transform: "translateX(-50px)" },
+          "to": { opacity: "1", transform: "translateX(0)" }
+        },
+        "gradient-text": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" }
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" }
+        },
+        "spin-slow": {
+          "from": { transform: "rotate(0deg)" },
+          "to": { transform: "rotate(360deg)" }
+        },
+        "grid-move": {
+          "0%": { transform: "translate(0, 0)" },
+          "100%": { transform: "translate(50px, 50px)" }
         }
       },
       animation: {
@@ -134,6 +166,14 @@ export default {
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
         "number-tick": "number-tick 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+        "typing": "typing 3.5s steps(40, end)",
+        "blink": "blink 0.75s step-end infinite",
+        "slide-in-up": "slide-in-up 0.8s ease-out forwards",
+        "slide-in-left": "slide-in-left 0.8s ease-out forwards",
+        "gradient-text": "gradient-text 3s ease infinite",
+        "gradient-shift": "gradient-shift 8s ease infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+        "grid-move": "grid-move 20s linear infinite",
       },
     },
   },

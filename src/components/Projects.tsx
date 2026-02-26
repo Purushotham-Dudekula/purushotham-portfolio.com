@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, Code2, Database, Shield, Brain, Video } from "lucide-react";
+import { Github, Code2, Database, Shield, Brain, Video, ExternalLink, Coins } from "lucide-react";
 import ScreensCarousel from "@/components/ScreensCarousel";
 import ss135823 from "@/assets/Screenshot 2025-11-06 135823.png";
 import ss142458 from "@/assets/Screenshot 2025-11-06 142458.png";
@@ -51,28 +51,30 @@ const galleryScreens = [img1, img2, img3, img4, img8, img6, img5, img7];
 
 // Pet Management screenshots (user uploaded) - order requested:
 // 133243, 133254, 133304, 133339, 133413, 133425
-import pet133243 from "@/assets/Screenshot 2025-11-07 133243.png";
-import pet133254 from "@/assets/Screenshot 2025-11-07 133254.png";
-import pet133304 from "@/assets/Screenshot 2025-11-07 133304.png";
-import pet133339 from "@/assets/Screenshot 2025-11-07 133339.png";
-import pet133413 from "@/assets/Screenshot 2025-11-07 133413.png";
-import pet133425 from "@/assets/Screenshot 2025-11-07 133425.png";
+// [Removed - replaced with NFT Explorer App]
 
-// Jules AI Resume Enhancer screenshots (user uploaded) - order requested:
+// AI-LinkedIn-Insight-Agent screenshots (user uploaded) - order requested:
 // 111327, 111332, 111340, 111602, 111631, 111651, 111707
-import jules111327 from "@/assets/Screenshot 2025-11-14 111327.png";
-import jules111332 from "@/assets/Screenshot 2025-11-14 111332.png";
-import jules111340 from "@/assets/Screenshot 2025-11-14 111340.png";
-import jules111602 from "@/assets/Screenshot 2025-11-14 111602.png";
-import jules111631 from "@/assets/Screenshot 2025-11-14 111631.png";
-import jules111651 from "@/assets/Screenshot 2025-11-14 111651.png";
-import jules111707 from "@/assets/Screenshot 2025-11-14 111707.png";
+import linkedin111327 from "@/assets/Screenshot 2025-11-14 111327.png";
+import linkedin111332 from "@/assets/Screenshot 2025-11-14 111332.png";
+import linkedin111340 from "@/assets/Screenshot 2025-11-14 111340.png";
+import linkedin111602 from "@/assets/Screenshot 2025-11-14 111602.png";
+import linkedin111631 from "@/assets/Screenshot 2025-11-14 111631.png";
+import linkedin111651 from "@/assets/Screenshot 2025-11-14 111651.png";
+import linkedin111707 from "@/assets/Screenshot 2025-11-14 111707.png";
 
 // Decentralized File Storage screenshots
 import pic1 from "@/assets/Picture1.jpg";
 import pic2 from "@/assets/Picture2.jpg";
 import pic3 from "@/assets/Picture3.jpg";
 import pic4 from "@/assets/Picture4.jpg";
+
+// NFT Explorer App screenshots
+import nft1 from "@/assets/NFT 1.png";
+import nft2 from "@/assets/NFT 2.png";
+import nft3 from "@/assets/NFT 3.png";
+import nft4 from "@/assets/NFT 4.png";
+import nft5 from "@/assets/NFT 5.png";
 
 // ReelMyApp screenshots
 import reel1 from "@/assets/reel1.jpg";
@@ -98,6 +100,8 @@ import reel20 from "@/assets/reel20.jpg";
 
 const decentralizedScreens = [pic1, pic2, pic3, pic4];
 
+const nftScreens = [nft1, nft2, nft3, nft4, nft5];
+
 const reelScreens = [
   reel1,
   reel2,
@@ -121,74 +125,70 @@ const reelScreens = [
   reel20,
 ];
 
-const petScreens = [
-  pet133243,
-  pet133254,
-  pet133304,
-  pet133339,
-  pet133413,
-  pet133425,
-];
+const petScreens = [];
 
-const julesScreens = [
-  jules111327,
-  jules111332,
-  jules111340,
-  jules111602,
-  jules111631,
-  jules111651,
-  jules111707,
+const linkedinScreens = [
+  linkedin111327,
+  linkedin111332,
+  linkedin111340,
+  linkedin111602,
+  linkedin111631,
+  linkedin111651,
+  linkedin111707,
 ];
 
 const Projects = () => {
   const projects = [
     {
+      title: "Gallery Hall Booking",
+      description: "Designed and developed a real-time web-based hall booking system with admin approval workflow and scheduling system. Built comprehensive dashboard management system for seamless event management.",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+      github: "https://github.com/Purushotham-Dudekula/Hall-Booking-and-Management-",
+      demo: "#",
+      icon: <Database className="w-6 h-6" />,
+      highlight: "Full Stack"
+    },
+    {
       title: "Cafe Management System",
-      description: "Full-stack cafe management solution with real-time order processing, inventory tracking, and table reservation system. Features include dynamic menu management, automated inventory alerts, sales analytics dashboard, and integrated payment processing. Built with JavaScript for the frontend and PHP backend with MySQL for robust data management.",
-      tech: ["JavaScript", "PHP", "MySQL", "HTML", "CSS"],
-      github: "https://github.com/lavanyakusumanchi/Cafe-management-system",
+      description: "Built full-stack platform for order management, billing, and menu administration. Designed intuitive admin dashboard with comprehensive management features.",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+      github: "https://github.com/Purushotham-Dudekula/Cafe-Management-System",
+      demo: "#",
       icon: <Code2 className="w-6 h-6" />,
       highlight: "Full Stack"
     },
     {
-      title: "Hall Booking System",
-      description: "Modern event space booking platform with real-time availability checking, secure user authentication, and automated billing. Features include interactive calendar views, customizable event packages, admin dashboard with analytics, and integrated payment gateway. Built using React, Node.js, REST API endpoints for seamless frontend-backend communication, and real-time SQL synchronization.",
-      tech: ["React", "Node.js", "MySQL", "JavaScript", "JWT Auth", "REST API"],
-      github: "https://github.com/lavanyakusumanchi/hall-booking-system",
-      icon: <Database className="w-6 h-6" />,
-      highlight: "Real-time SQL"
-    },
-    {
-      title: "Pet Management System",
-      description: "The Pet Management System allows users to store and manage pet information such as health details, vaccination dates, and owner records. Built using MySQL with SQL queries to enable smooth data insertion, updating, and retrieval, ensuring accurate and well-organized data management.",
-      tech: ["MySQL", "SQL"],
-      github: "https://github.com/lavanyakusumanchi/pet-management-system",
-      icon: <Database className="w-6 h-6" />,
-      highlight: "MySQL & SQL"
+      title: "NFT Explorer App",
+      description: "NFT Explorer App is a blockchain-based web application that allows users to explore, view, and analyze NFT collections in real-time. It integrates Web3 technologies to fetch NFT data, display ownership details, and provide a smooth decentralized browsing experience.",
+      tech: ["React.js", "Web3.js / Ethers.js", "Node.js", "REST API", "Blockchain", "Ethereum", "MetaMask"],
+      github: "https://github.com/Purushotham-Dudekula/NFT-EXPLORER-APP",
+      icon: <Coins className="w-6 h-6" />,
+      highlight: "Web3"
     },
     {
       title: "Decentralized File Storage",
       description: "Blockchain-based distributed storage platform using IPFS and Ethereum smart contracts for secure, tamper-proof file management. Features cryptographic access control for file sharing and versioning, decentralized user authentication with MetaMask integration, and smart contract-based automated payment system for storage space allocation.",
       tech: ["Blockchain", "IPFS", "Ethereum", "Smart Contracts"],
-      github: "https://github.com/lavanyakusumanchi/Decentralized_file_storage",
+      github: "https://github.com/Purushotham-Dudekula/Decentralized_file_storage/tree/main/Decentralized_file_storage-main",
       icon: <Shield className="w-6 h-6" />,
       highlight: "Web3 Tech"
     },
     {
-      title: "Jules AI Resume Enhancer",
-      description: "Full-stack web application that uses Google Jules API to enhance resumes, making them more professional, ATS-friendly, and job-ready. Features include PDF resume upload and parsing, AI-powered content enhancement, client-side PDF generation for download, history management with local storage, and modern responsive UI. Built with React.js frontend, Node.js/Express backend with REST API endpoints, Multer for file uploads, and integrated with Google Jules API (with OpenAI fallback).",
-      tech: ["React.js", "Node.js", "Express.js", "REST API", "MongoDB", "Multer", "Google Jules API", "OpenAI API", "jsPDF"],
-      github: "https://github.com/lavanyakusumanchi/Ai-Resume-Enhancer",
+      title: "AI-LinkedIn-Insight-Agent",
+      description: "AI-LinkedIn-Insight-Agent is a full-stack AI tool that analyzes LinkedIn profiles and generates personalized improvement suggestions. It helps users strengthen their profile, improve visibility, and optimize their professional branding using intelligent insights.",
+      tech: ["React.js", "Node.js", "Express.js", "REST API", "Google Jules API"],
+      github: "https://github.com/Purushotham-Dudekula/Ai-linkedin-insight-agent",
       icon: <Brain className="w-6 h-6" />,
       highlight: "AI-Powered"
     },
     {
       title: "ReelMyApp",
-      description: "Automated marketing video generator that enables brands and creators to instantly produce professional 5–15 second promotional reels. Simply upload a logo, thumbnail, description, category, and audio, and the system automatically assembles a dynamic marketing video using FFmpeg. Generated reels are published to a seamless, scrollable feed with engagement features like like, save, comment, and share. Features include category-based feed filtering, real-time reel publishing, admin dashboard for content moderation, and comprehensive user management.",
-      tech: ["Flutter", "Dart", "Node.js", "Express", "MongoDB", "FFmpeg", "Provider", "Dio", "JWT", "REST API"],
-      github: "https://github.com/lavanyakusumanchi/ReelMyApp",
+      description: "Developed full-stack marketing reel generator creating 5–15 second branded videos. Integrated FFmpeg for video processing and implemented JWT authentication for secure user management.",
+      tech: ["Flutter", "Node.js", "Express.js", "MongoDB", "FFmpeg", "JWT"],
+      github: "https://github.com/Purushotham-Dudekula/ReelMyApp",
+      demo: "#",
       icon: <Video className="w-6 h-6" />,
-      highlight: "Video Automation"
+      highlight: "Full Stack"
     }
   ];
 
@@ -199,43 +199,42 @@ const ProjectsSection = () => {
   const projects = Projects();
 
   return (
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="py-20 px-6 bg-gradient-to-b from-slate-900 to-blue-950">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
-          Featured Projects
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Featured Projects
+          </h2>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto"></div>
+        </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className="p-6 bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-sm border-border/10 hover:shadow-glow transition-all duration-500 hover:-translate-y-3 flex flex-col group overflow-hidden relative animate-fade-in"
-              style={{ animationDelay: `${index * 0.15}s`, opacity: 0, animationFillMode: "forwards" }}
+              className="bg-slate-800/50 border border-blue-600/30 p-6 hover:border-blue-500 hover:bg-slate-800 transition-all duration-300 flex flex-col group overflow-hidden relative backdrop-blur-sm"
             >
-              {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-violet-500/5 opacity-50" />
-              
               <div className="relative z-10">
                 <div className="flex items-center justify-between py-2 mb-4">
                   {/* Left badge with code icon */}
-                  <div className="flex items-center px-3 py-2 bg-blue-500/10 rounded-full backdrop-blur-sm shadow-sm border border-blue-500/20 group-hover:bg-blue-500/15 group-hover:border-blue-500/30 transition-all duration-300">
-                    <div className="text-blue-400 group-hover:text-blue-300 transition-colors">
+                  <div className="flex items-center px-3 py-2 bg-blue-600/20 rounded-lg border border-blue-600/30">
+                    <div className="text-blue-400">
                       {project.icon}
                     </div>
                   </div>
                   
-                  {/* Right "Full Stack" badge */}
-                  <span className="px-4 py-1.5 bg-slate-700/50 text-blue-300 text-xs font-medium tracking-wide rounded-full border border-blue-400/20 shadow-sm backdrop-blur-sm">
+                  {/* Right badge */}
+                  <span className="px-4 py-1.5 bg-blue-600/20 text-blue-300 text-xs font-medium tracking-wide rounded-lg border border-blue-600/30">
                     {project.highlight}
                   </span>
                 </div>
                 
                 {/* Full-width project thumbnail / carousel area */}
                 {project.title === "Cafe Management System" || 
-                 project.title === "Hall Booking System" || 
-                 project.title === "Pet Management System" ||
+                 project.title === "Gallery Hall Booking" || 
                  project.title === "Decentralized File Storage" ||
-                 project.title === "Jules AI Resume Enhancer" ||
+                 project.title === "AI-LinkedIn-Insight-Agent" ||
+                 project.title === "NFT Explorer App" ||
                  project.title === "ReelMyApp" ? (
                   <>
                     <div
@@ -252,53 +251,66 @@ const ProjectsSection = () => {
                       <ScreensCarousel images={
                         project.title === "Cafe Management System"
                           ? cafeScreens
-                          : project.title === "Hall Booking System"
+                          : project.title === "Gallery Hall Booking"
                           ? galleryScreens
-                          : project.title === "Pet Management System"
-                          ? petScreens
                           : project.title === "Decentralized File Storage"
                           ? decentralizedScreens
-                          : project.title === "Jules AI Resume Enhancer"
-                          ? julesScreens
+                          : project.title === "AI-LinkedIn-Insight-Agent"
+                          ? linkedinScreens
+                          : project.title === "NFT Explorer App"
+                          ? nftScreens
                           : project.title === "ReelMyApp"
                           ? reelScreens
                           : []
                       } />
                     </div>
                     {/* Project title below carousel */}
-                    <h3 className="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors text-center">
+                    <h3 className="text-2xl font-semibold text-white mb-3 text-center">
                       {project.title}
                     </h3>
                   </>
                 ) : (
                   /* Project title for other projects */
-                  <h3 className="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-semibold text-white mb-3">
                     {project.title}
                   </h3>
                 )}
 
-                <p className="text-foreground/80 mb-4 flex-1 leading-relaxed">{project.description}</p>
+                <p className="text-slate-300 mb-4 flex-1 leading-relaxed">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, i) => (
                     <span 
                       key={i}
-                      className="px-3 py-1 bg-primary/10 rounded-full text-xs text-primary border border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-300"
+                      className="px-3 py-1 bg-blue-600/20 rounded-lg text-xs text-blue-300 border border-blue-600/30 font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
                 
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="w-full border-primary text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 group-hover:shadow-glow"
-                  onClick={() => window.open(project.github, '_blank')}
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  View on GitHub
-                </Button>
+                <div className="flex gap-3">
+                  {project.demo && project.demo !== "#" && (
+                    <Button 
+                      variant="default" 
+                      size="lg"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white transition-colors rounded-lg font-semibold"
+                      onClick={() => window.open(project.demo, '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </Button>
+                  )}
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    className={`${project.demo && project.demo !== "#" ? 'flex-1' : 'w-full'} border-blue-600/50 text-blue-300 hover:bg-blue-950/50 hover:border-blue-400 transition-colors rounded-lg font-semibold`}
+                    onClick={() => window.open(project.github, '_blank')}
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </Button>
+                </div>
               </div>
             </Card>
           ))}

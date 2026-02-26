@@ -1,27 +1,27 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Stats from "@/components/Stats";
-import Skills from "@/components/Skills";
-import SkillProgress from "@/components/SkillProgress";
+import RealTimeProject from "@/components/RealTimeProject";
 import Experience from "@/components/Experience";
 import ProjectsSection from "@/components/Projects";
+import Skills from "@/components/Skills";
+import CurrentlyWorking from "@/components/CurrentlyWorking";
+import WhyHireMe from "@/components/WhyHireMe";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
+    <div className="min-h-screen bg-slate-900">
       <div className="relative">
         <Navigation />
         <Hero />
-        <About />
-        <Stats />
-        <Skills />
-        <SkillProgress />
+        <RealTimeProject />
         <Experience />
         <ProjectsSection />
+        <Skills />
+        <CurrentlyWorking />
+        <WhyHireMe />
         <Education />
         <Contact />
         <Footer />
