@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 z-10 relative">
         <div className="grid max-w-6xl mx-auto grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
           {/* Text Column */}
-          <div className="order-1 space-y-8 text-center lg:order-1 lg:text-left">
+          <div className="order-2 space-y-8 text-center lg:order-1 lg:text-left">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-1 text-xs font-medium uppercase tracking-[0.25em] text-slate-300 shadow-sm backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
               Open to full-time & freelance roles
@@ -102,7 +102,7 @@ const Hero = () => {
           </div>
 
           {/* Avatar Column */}
-          <div className="order-2 flex justify-center lg:order-2 lg:justify-end">
+          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="group relative">
               {/* Enhanced decorative glow */}
               <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-purple-500/40 via-sky-500/40 to-emerald-400/30 opacity-50 blur-2xl transition-all duration-500 group-hover:opacity-80 group-hover:blur-3xl" />
