@@ -30,16 +30,14 @@ const Hero = () => {
               </h1>
 
               <p className="text-xl font-medium text-slate-300 md:text-2xl">
-                Full Stack Developer | Scalable Systems & AI-Driven Applications
+                Flutter & Full Stack Developer | AI-Powered Web & Mobile Applications
+
               </p>
             </div>
 
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg lg:ml-0 lg:mr-auto">
-              Full Stack Developer with hands-on experience in building scalable web
-              applications using React, Node.js, and MongoDB. Experienced in
-              developing end-to-end systems, REST APIs, and AI-integrated dashboards
-              through real-time projects and internships. Passionate about creating
-              clean, efficient, and production-ready solutions.
+              Flutter & Full Stack Developer with experience building scalable web and mobile applications using Flutter, React.js, Node.js, Firebase, REST APIs, and modern databases. Successfully completed a US-based real-time project under Google mentorship and currently working as a Freelance Flutter Developer for KHA AgriConnect, focusing on real-time systems, responsive UI, backend integration, and AI-powered applications.
+
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 lg:max-w-md lg:ml-0">
@@ -76,7 +74,7 @@ const Hero = () => {
                 className="w-full border-2 border-slate-700 text-sm font-semibold tracking-wide text-slate-200 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-900/50"
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/uc?export=download&id=109pZ22Lskd8ZgxHwwJP7yt5U0ewsrirQ",
+                    "https://drive.google.com/file/d/1T6jR9YxxcIZhyTCUgp0PGeBYFLBSi5-U/view?usp=sharing",
                     "_blank"
                   )
                 }
