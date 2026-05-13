@@ -19,11 +19,14 @@ const Skills = () => {
       { name: "C", icon: <Code className="w-10 h-10" />, gradient: "from-purple-500 to-indigo-600" },
       { name: "Java", icon: <Code className="w-10 h-10" />, gradient: "from-indigo-500 to-purple-600" },
       { name: "JavaScript", icon: <FileCode className="w-10 h-10" />, gradient: "from-yellow-500 to-orange-500" },
+      { name: "Dart", icon: <Code className="w-10 h-10" />, gradient: "from-blue-500 to-cyan-500" },
+      
     ],
     frontend: [
       { name: "HTML", icon: <Globe className="w-10 h-10" />, gradient: "from-orange-500 to-red-500" },
       { name: "CSS", icon: <Globe className="w-10 h-10" />, gradient: "from-blue-500 to-cyan-500" },
       { name: "React.js", icon: <Layers className="w-10 h-10" />, gradient: "from-cyan-500 to-blue-500" },
+      { name: "Flutter", icon: <Layers className="w-10 h-10" />, gradient: "from-cyan-400 to-blue-600" },
     ],
     backend: [
       { name: "Node.js", icon: <Server className="w-10 h-10" />, gradient: "from-green-500 to-emerald-500" },
